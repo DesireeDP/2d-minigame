@@ -1,5 +1,5 @@
 [ ] Diseños - Desi
-[ ] Pagina de inicio
+[ ] Pagina de inicio - Desi
 
 [ ] Colocar nuevos personajes evitando colisiones - Eskai
 [ ] Mover personajes por teclado (Izquierda y derecha) - Desi

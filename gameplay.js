@@ -19,7 +19,7 @@ function newPlayer() {
     do {
         posX = Math.random() * (window.innerWidth - innerData.characterWidth);
         posY = (Math.random() * (window.innerHeight - innerData.characterHeight - 60)) + 60;
-        if (safety < 50) safety++;
+        if (safety < 500) safety++;
         else break;
     } while (genCollisions(posX, posY))
 

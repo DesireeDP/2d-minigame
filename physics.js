@@ -3,6 +3,8 @@ const playground = document.querySelector('main #players');
 const info = {
     width: 50,
     height: 80,
+    currentP1: 0,
+    currentP2: 1,
 };
 
 const playerData = [];
@@ -10,20 +12,6 @@ const playerData = [];
 let renderActive = true;
 
 /* ========================= */
-
-function newPlayer() {
-    let i = playerData.length;
-    playerData[i] = {
-        left: Math.random() * (window.innerWidth - info.width),
-        bottom: (Math.random() * (window.innerHeight - info.height - 60)) + 60,
-        accel: 0,
-        gravity: 0,
-    };
-    let player = document.createElement('div');
-    player.classList.add('player');
-    player.id = `player${i}`;
-    playground.appendChild(player);
-}   
 
 function render() {
     physics();
@@ -55,13 +43,12 @@ function physics() {
     }
 }
 
-function pressMove(who, positive = true) {
+function pressMove(positive = true, player2 = false) {
     if(positive) playerData[who].accel += 0.5;
     else playerData[who].accel -= 0.5;
 }
 
-function jump(who) {
-    playerData[who].gravity = -20;
+function jump(player2 = false) {
+    if(player2) playerData[info.currentP2].gravity = -20;
+    else playerData[info.currentP1].gravity = -20;
 }
-
-render();

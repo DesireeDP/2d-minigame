@@ -1,39 +1,42 @@
 document.addEventListener('keydown', function(event) {
-    console.log(event);
+    keyboardHandler(event.which);
 });
 
 
-function keyboardHandler (event){
-    switch(event.KeyCode){
-        case 37:                    // Flecha izquierda
+function keyboardHandler (key){
+    switch(key){
+        case 78:                    // N | Nuevo personaje
+            newPlayer();
+            break;
+        case 37:                    // Flecha izq. | P1 izq.
 
             break;
-        case 39:                    // Flecha derecha
+        case 39:                    // Flecha dere. | P1 dere.
 
             break;
-        case 13:                    // Flecha arriba
+        case 38:                    // Flecha arriba | P1 saltar
+            jump();
+            break;
+        case 40:                    // Flecha abajo | P1 agachar
 
             break;
-        case 40:                    // Flecha abajo
+        case 13:                    // Enter | P1 diálogo
 
             break;
-        case 76:                    // L
+        case 65:                    // A | P2 izq.
 
             break;
-        case 65:                    // A
+        case 68:                    // D | P2 dere.
 
             break;
-        case 68:                    // D
+        case 87:                    // W | P2 saltar
+            jump(true);
+            break;
+        case 83:                    // S | P2 agachar
 
             break;
-        case 32:                    // Espacio
+        case 32:                    // Espacio | P2 diálogo
 
-            break;
-        case 83:                    // S
-
-            break;
-        case 70:                    // F
-        
             break;
         }
     }

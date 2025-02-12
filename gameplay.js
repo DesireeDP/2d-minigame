@@ -1,8 +1,8 @@
 const innerData = {
     characterWidth: 50,
     characterHeight: 80,
-    currentP1: 0,
-    currentP2: 1,
+    currentP1: 1,
+    currentP2: 0,
 };
 
 const playerData = [];

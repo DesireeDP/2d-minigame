@@ -12,7 +12,7 @@ function physics() {
             playerData[i].gravity = 0;
             playerData[i].bottom = 60;
         } else {
-            playerData[i].bottom -= playerData[i].gravity;
+            playerData[i].bottom = Math.min(playerData[i]. bottom - playerData[i].gravity, (window.innerHeight - innerData.characterHeight));
         }
     }
 
@@ -20,6 +20,8 @@ function physics() {
     moveCharacters();
     for(i=0; i<playerData.length; i++) {
         playerData[i].left += playerData[i].accel;
+        if (playerData[i].left < 0) playerData[i].left = 0;
+        if (playerData[i].left > window.innerWidth - innerData.characterWidth) playerData[i].left = window.innerWidth - innerData.characterWidth;
     }
 }
 

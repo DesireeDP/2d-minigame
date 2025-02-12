@@ -10,18 +10,18 @@ document.addEventListener('keyup', function(event) {
 function keyboardHandler (key, stopping){
     if(stopping){
         switch(key){
-            case 37:                    // Flecha izq. | P1 izq.
-            case 39:                    // Flecha dere. | P1 dere.
+            case 37:                    // Flecha izq. | P1 dejar de ir izq.
+            case 39:                    // Flecha dere. | P1 dejar de ir dere.
                 playerData[innerData.currentP1].speeding = 'none';
                 break;
-            case 40:                    // Flecha abajo | P1 agachar
+            case 40:                    // Flecha abajo | P1 dejar de agachar
 
                 break;
-            case 65:                    // A | P2 izq.
-            case 68:                    // D | P2 dere.
+            case 65:                    // A | P2 dejar de ir izq.
+            case 68:                    // D | P2 dejar de ir dere.
                 playerData[innerData.currentP2].speeding = 'none';
                 break;
-            case 83:                    // S | P2 agachar
+            case 83:                    // S | P2 dejar de agachar
 
                 break;
         }

@@ -1,8 +1,8 @@
 function newPlayer() {
     let i = playerData.length;
     playerData[i] = {
-        left: Math.random() * (window.innerWidth - info.width),
-        bottom: (Math.random() * (window.innerHeight - info.height - 60)) + 60,
+        left: Math.random() * (window.innerWidth - innerData.characterWidth),
+        bottom: (Math.random() * (window.innerHeight - innerData.characterHeight - 60)) + 60,
         accel: 0,
         gravity: 0,
     };
@@ -11,3 +11,7 @@ function newPlayer() {
     player.id = `player${i}`;
     playground.appendChild(player);
 }   
+
+function selectPlayer() {
+    
+}

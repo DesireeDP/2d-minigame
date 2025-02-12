@@ -1,8 +1,8 @@
 const playground = document.querySelector('main #players');
 
-const info = {
-    width: 50,
-    height: 80,
+const innerData = {
+    characterWidth: 50,
+    characterHeight: 80,
     currentP1: 0,
     currentP2: 1,
 };
@@ -38,17 +38,28 @@ function physics() {
     }
 
     // Acceleration
+    moveCharacters();
     for(i=0; i<playerData.length; i++) {
         playerData[i].left += playerData[i].accel;
     }
 }
 
-function pressMove(positive = true, player2 = false) {
-    if(positive) playerData[who].accel += 0.5;
-    else playerData[who].accel -= 0.5;
+function jump(player2 = false) {
+    if(player2) playerData[innerData.currentP2].gravity = -20;
+    else playerData[innerData.currentP1].gravity = -20;
 }
 
-function jump(player2 = false) {
-    if(player2) playerData[info.currentP2].gravity = -20;
-    else playerData[info.currentP1].gravity = -20;
+function moveCharacters() {
+    for(i=0; i<playerData.length; i++) {
+        if(playerData[i].speeding == 'negative') {
+            playerData[i].accel = Math.max(-20, playerData[i].accel - 1);
+        }
+        if(playerData[i].speeding == 'positive') {    
+            playerData[i].accel = Math.min(20, playerData[i].accel + 1);
+        }
+        if(playerData[i].speeding == 'none') {
+            if(playerData[i].accel < 1 && playerData[i].accel > -1) playerData[i].accel = 0;
+            else playerData[i].accel /= 1.13;
+        }
+    }
 }

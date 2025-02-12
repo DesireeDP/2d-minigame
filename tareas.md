@@ -1,6 +1,7 @@
 [ ] Diseños - Desi
 [ ] Pagina de inicio - Desi
 
+[X] Gestionar teclado - Desi
 [-] Colocar nuevos personajes evitando colisiones - Eskai
 [ ] Mover personajes por teclado (Izquierda y derecha) - Desi
 [ ] Mover personajes por teclado (Salto) 

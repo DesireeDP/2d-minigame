@@ -18,10 +18,8 @@ function keyboardHandler (key, stopping){
 
                 break;
             case 65:                    // A | P2 izq.
-
-                break;
             case 68:                    // D | P2 dere.
-
+                playerData[innerData.currentP2].speeding = 'none';
                 break;
             case 83:                    // S | P2 agachar
 
@@ -48,10 +46,10 @@ function keyboardHandler (key, stopping){
 
                 break;
             case 65:                    // A | P2 izq.
-
+                playerData[innerData.currentP2].speeding = 'negative';
                 break;
             case 68:                    // D | P2 dere.
-
+                playerData[innerData.currentP2].speeding = 'positive';
                 break;
             case 87:                    // W | P2 saltar
                 jump(true);

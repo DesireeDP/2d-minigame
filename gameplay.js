@@ -22,10 +22,10 @@ function newPlayer() {
     character.classList.add('character');
     character.id = `player${i}`;
 
-    character.onclick = function() { selectCharacter(this, false); };
+    character.onclick = function() { selectCharacter(this, true); };
     character.oncontextmenu = function(e) {
         e.preventDefault();
-        selectCharacter(this, true)
+        selectCharacter(this, false)
     };
 
     playground.appendChild(character);

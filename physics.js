@@ -45,7 +45,22 @@ function getCollisions(p) {
         }
     }
     return contact;
+}
 
+// Comprobar coordenadas en generación
+function genCollisions(coordX, coordY) {
+    let contact = false;
+    let deltaX = 0, deltaY = 0;
+    for (j=0; j<playerData.length; j++) {
+        deltaX = playerData[j].left - coordX;
+        if (deltaX < innerData.characterWidth && deltaX > - innerData.characterWidth) {
+            deltaY = playerData[j].bottom - coordY;
+            if (deltaY < innerData.characterHeight && deltaY > - innerData.characterHeight) {
+                contact = true;
+            }
+        }
+    }
+    return contact;
 }
 
 

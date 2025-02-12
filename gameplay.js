@@ -3,6 +3,7 @@ const innerData = {
     characterHeight: 80,
     currentP1: 1,
     currentP2: 0,
+    nextChar: 0,
 };
 
 const playerData = [];
@@ -11,10 +12,20 @@ const playerData = [];
 
 // Generar un nuevo personaje
 function newPlayer() {
-    let i = playerData.length;
+    let i = innerData.nextChar;
+    innerData.nextChar++;
+    let posX, posY;
+    let safety = 0;
+    do {
+        posX = Math.random() * (window.innerWidth - innerData.characterWidth);
+        posY = (Math.random() * (window.innerHeight - innerData.characterHeight - 60)) + 60;
+        if (safety < 50) safety++;
+        else break;
+    } while (genCollisions(posX, posY))
+
     playerData[i] = {
-        left: Math.random() * (window.innerWidth - innerData.characterWidth),
-        bottom: (Math.random() * (window.innerHeight - innerData.characterHeight - 60)) + 60,
+        left: posX,
+        bottom: posY,
         accel: 0,
         gravity: 0,
     };
@@ -33,6 +44,6 @@ function newPlayer() {
 
 // Seleccionar un personaje para moverlo
 function selectCharacter(char, p2) {
-    if(p2) innerData.currentP2 = char.id[6];
-    else innerData.currentP1 = char.id[6];
+    if(p2) innerData.currentP2 = char.id.slice(6);
+    innerData.currentP1 = char.id.slice(6);
 }

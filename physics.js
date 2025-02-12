@@ -9,7 +9,7 @@ function physics() {
     }
     for(i=0; i<playerData.length; i++) {
         if(playerData[i].bottom <= 60 && playerData[i].gravity > 0) {
-            playerData[i].gravity += 0;
+            playerData[i].gravity = 0;
             playerData[i].bottom = 60;
         } else {
             playerData[i].bottom -= playerData[i].gravity;

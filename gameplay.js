@@ -28,7 +28,8 @@ function newPlayer() {
         bottom: posY,
         accel: 0,
         gravity: 0,
-    };
+        dialogues: dialogues.slice(),
+    }; 
     let character = document.createElement('div');
     character.classList.add('character');
     character.classList.add('ghost' + (i%5))

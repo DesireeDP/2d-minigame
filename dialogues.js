@@ -6,8 +6,8 @@ var dialogues = ['Buuu... ¿me viste?','Estoy atrapado entre mundos...','¡No hu
 
 var usedDialogues = [];
 
-function characterDialogues () {
-    var talks = document.getElementById('characDialoge');
+const talks = document.getElementById('characDialoge');
+function characterDialogues(p2) {
 
     // Selecciona las frases aleatorias sin que se repitan.
     if (dialogues.length > 0) {
@@ -20,8 +20,17 @@ function characterDialogues () {
         usedDialogues = [];
     }
 
-    talks.innerHTML = sentence;
+
+    talks.textContent = sentence;
     talks.style.display = "block";
+    
+    if(p2) {
+        talks.style.left = playerData[innerData.currentP2].left + 30 + 'px';
+        talks.style.bottom = playerData[innerData.currentP2].bottom + 60 + 'px';
+    } else {
+        talks.style.left = playerData[innerData.currentP1].left + 30 + 'px';
+        talks.style.bottom = playerData[innerData.currentP1].bottom + 60 + 'px';
+    }
     
 }
     

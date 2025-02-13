@@ -54,3 +54,9 @@ main{
     position: fixed;
     font-family: "Mystery Quest", serif;
 }
+
+.botonstart {
+    position: fixed;
+    bottom: 10rem;
+    left: 20%;
+}

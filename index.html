@@ -16,16 +16,24 @@
         <input value="Play!"> 
     </div> 
     -->
+    
+    <img src="resources/botoncito.png" id="butonPlay" class="botonstart" onclick="gamePlay()">
+    
+    
+    <div class="escenario" id="contenedorjuego" style="display: none;">
     <main>
+        
         <div id="floor"></div>
         <div id="players"></div>
         <div id="characDialoge" style="display: none;"></div>
     </main>
+    </div>
 
     <script src="physics.js"></script>
     <script src="keyboardHandler.js"></script>
     <script src="gameplay.js"></script>
     <script src="graphics.js"></script>
     <script src="dialogues.js"></script>
+    <script src="play.js"></script>
 </body>
 </html>

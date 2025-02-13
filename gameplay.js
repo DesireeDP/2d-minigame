@@ -31,6 +31,7 @@ function newPlayer() {
     };
     let character = document.createElement('div');
     character.classList.add('character');
+    character.classList.add('ghost' + (i%5))
     character.id = `player${i}`;
 
     character.onclick = function() { selectCharacter(this, true); };
@@ -45,5 +46,5 @@ function newPlayer() {
 // Seleccionar un personaje para moverlo
 function selectCharacter(char, p2) {
     if(p2) innerData.currentP2 = char.id.slice(6);
-    innerData.currentP1 = char.id.slice(6);
+    else innerData.currentP1 = char.id.slice(6);
 }

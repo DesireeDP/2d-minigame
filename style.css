@@ -10,9 +10,30 @@ main{
 
 .character{
     width: 50px; height: 80px;
-    background-image: url(resources/fantasma1.png);
     position: fixed;
+
+    &.ghost0{
+        background-image: url(resources/fantasma0.png);
+    }
+
+    &.ghost1{
+        background-image: url(resources/fantasma1.png);
+    }
+
+    &.ghost2{
+        background-image: url(resources/fantasma2.png);
+    }
+
+    &.ghost3{
+        background-image: url(resources/fantasma3.png);
+    }
+
+    &.ghost4{
+        background-image: url(resources/fantasma4.png);
+    }
 }
+
+
 
 #floor{
     background-color: black;

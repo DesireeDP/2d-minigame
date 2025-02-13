@@ -5,6 +5,9 @@ const dialogues = ['Buuu... ¿me viste?','Estoy atrapado entre mundos...','¡No 
     'A veces, todavía sueño..','¡No despiertes a los otros!','Ya es tarde... demasiado tarde...']
 
 const talks = document.getElementById('characDialoge');
+
+let timeout = '';
+
 function characterDialogues(p2) {
 
     // Guardar el personaje seleccionado
@@ -30,5 +33,9 @@ function characterDialogues(p2) {
     talks.style.left = playerData[selectedChar].left + 30 + 'px';
     talks.style.bottom = playerData[selectedChar].bottom + 60 + 'px';
     
+    clearTimeout(timeout)
+    timeout = setTimeout(() => {
+        talks.style.display = 'none';
+    }, 2000);
 }
     

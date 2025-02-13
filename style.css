@@ -59,4 +59,5 @@ main{
     position: fixed;
     bottom: 10rem;
     left: 20%;
+    cursor: pointer;
 }

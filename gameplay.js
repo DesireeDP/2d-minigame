@@ -10,6 +10,14 @@ const playerData = [];
 
 /* ======================================== */
 
+function gameStart() {
+    document.getElementById('butonPlay').style.display = 'none';
+    contenedorjuego.style.display = "block"; 
+    newPlayer();
+    newPlayer();
+}
+
+
 // Generar un nuevo personaje
 function newPlayer() {
     let i = innerData.nextChar;
